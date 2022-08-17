@@ -48,7 +48,7 @@ document.getElementById('file').onchange = function(){
       
       const createNewString = function (arr){ // loops through and increments each appropriate line
         let str = ``; // create return string
-        let userLineNumber = prompt(`What line would you like to insert a row at? `, 2);
+        // let userLineNumber = prompt(`What line would you like to insert a row at? `, 2);
 
         for(let line = 0; line < workArray.length; line++){
           let miniStr = ``;
@@ -60,7 +60,7 @@ document.getElementById('file').onchange = function(){
           // console.log(`Ministr: ${miniStr},\nFullLine: ${fullLine},\nFirstHalf: ${firstHalf},\nSecondHalf: ${secondHalf}\n`);
           if(fullLine.includes(`=`)){
             // if numVal === 2, create new line with input from prompt
-            if(numVal === userLineNumber){
+            if(numVal === 2){
               str += window.prompt(`Complete the new line: `, `${fullLine}`) + newl; // when on the second base, server, location, etc. insert new line based on user input
             }
             miniStr += ` ${numVal > 1 ? incNum(firstHalf) + gap : firstHalf}=${secondHalf}`; // create string to append to str after each iteration
