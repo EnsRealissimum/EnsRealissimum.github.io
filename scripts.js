@@ -75,7 +75,8 @@ document.getElementById('file').onchange = function(){
         return str; // return altered string
       }
       // console.log(createNewString(workArray));
-      alert(createNewString(workArray));
+      //alert(createNewString(workArray));
+      document.querySelector(`.resultPre`).textContent = createNewString(workArray);
       // alert(str);
     }
 
