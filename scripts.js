@@ -69,14 +69,14 @@ document.getElementById('file').onchange = function(){
             miniStr = `${fullLine}`; // if no `=` sign, add full line unedited
           }
           // appends line to string with line break after each
-          str += miniStr + newl;
+          str += miniStr/** + newl*/;
         }
         //console.log(str);
         return str; // return altered string
       }
-      // console.log(createNewString(workArray));
+      //console.log(createNewString(workArray));
       //alert(createNewString(workArray));
-      document.querySelector(`.resultPre`).textContent = createNewString(workArray);
+      document.querySelector(`.resultTestArea`).value = createNewString(workArray);
       // alert(str);
     }
 
@@ -88,9 +88,10 @@ document.getElementById('file').onchange = function(){
 
 
 // what's left
-// - host on webpage
+// - host on webpage - Done, thought it'd be better to have it on its own website
 // - try and predict the new entry
 // - create way to insert rows where ever the user wants
+// - use some css to make it look nicer
 
 
 
