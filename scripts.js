@@ -29,7 +29,6 @@ const incNum = function(value){ // this will take in a string and increase any n
 
 document.getElementById('file').onchange = function(){
 
-    //let myFinalBlob;
     let file = this.files[0]; // the files property returns a file list. 
     // so file [0] returns the file at index 0
   
@@ -76,8 +75,6 @@ document.getElementById('file').onchange = function(){
       //console.log(createNewString(workArray));
       //alert(createNewString(workArray));
       document.querySelector(`.resultTestArea`).value = createNewString(workArray);
-      //myFinalBlob = new Blob([createNewString(workArray)], {type:"text/plain"});
-      // console.log(myFinalBlob.text());
       // alert(str);
     }
 
@@ -88,9 +85,27 @@ document.getElementById('file').onchange = function(){
 
   };
 
-  function saveToTextFile(){
-    let myFinalBlob = new Blob([document.querySelector(`.resultTestArea`).value], {type:"text/plain"});
+  function destroyClickedElement(event)
+  {
+      document.body.removeChild(event.target);
   }
+
+  function saveToTextFile(){
+    let textToSave = document.querySelector(`.resultTestArea`).value;
+    let textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    let textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    let fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+
+    let downloadLink = document.createElement("a"); // creates an html element called `a`
+    downloadLink.download = fileNameToSaveAs; 
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none"; // makes element invisible
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click(); // simulates a click on the element
+  };
 
 
 
