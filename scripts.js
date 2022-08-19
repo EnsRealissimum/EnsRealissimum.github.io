@@ -6,7 +6,6 @@ const gap = ` `; // one space
 const newl = `\n`; // new line 
 const numeric = /\d+/; // this is a regrular expression for one or more numeric digits, it is later used to check if there is a numeric digit in a record
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // extra functions
@@ -30,7 +29,7 @@ const incNum = function(value){ // this will take in a string and increase any n
 
 document.getElementById('file').onchange = function(){
 
-
+    //let myFinalBlob;
     let file = this.files[0]; // the files property returns a file list. 
     // so file [0] returns the file at index 0
   
@@ -77,13 +76,21 @@ document.getElementById('file').onchange = function(){
       //console.log(createNewString(workArray));
       //alert(createNewString(workArray));
       document.querySelector(`.resultTestArea`).value = createNewString(workArray);
+      //myFinalBlob = new Blob([createNewString(workArray)], {type:"text/plain"});
+      // console.log(myFinalBlob.text());
       // alert(str);
     }
 
 
     reader.readAsText(file);
+
+
+
   };
 
+  function saveToTextFile(){
+    let myFinalBlob = new Blob([document.querySelector(`.resultTestArea`).value], {type:"text/plain"});
+  }
 
 
 
