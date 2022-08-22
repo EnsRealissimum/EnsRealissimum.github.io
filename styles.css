@@ -1,3 +1,32 @@
 h1 {
-    color: rgb(106, 231, 102);
+    color: rgb(255, 255, 255);
+}
+
+.bodyDiv {
+    margin: 15px;
+    padding: 15px;
+    width: 500px;
+    height: fit-content;
+    background-color: #c2e8eb;
+    border-radius: 5px;
+
+}
+
+.topDiv {
+    background-color: #36715B;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 15px;
+}
+
+.leftMargin {
+    margin-left: 10px;
+}
+
+.botPad {
+    padding-bottom: 10px;
+}
+
+.resultTextArea {
+    width: 95%; height: 465px;
 }

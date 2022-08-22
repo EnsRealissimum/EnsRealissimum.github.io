@@ -5,14 +5,20 @@
     <title> - INI File Editor - </title>
   </head>
   <body>
-    <h1><b>Select File</b></h1>
-    <input type="file" name="file" id="file">
-    <p class="resultPara"></p>
-    <pre class="resultPre"></pre>
-    <textarea class="resultTestArea" style="width: 437px; height: 465px;"></textarea><br><br>
-    <input id="inputFileNameToSaveAs" value=""></input>
-    <button onclick="saveToTextFile()">Save Text to File</button>
-
+    <div class="darkBG">
+      <div class="bodyDiv">
+        <div class="topDiv"><h1 style="padding-left: 10px;"><b>.ini File Editor</b></h1></div>
+        <div class="mainDiv">
+          <dl>
+            <dt class="leftMargin botPad"><input class="fileInput" type="file" name="file" id="file"></dt>
+            <dt class="leftMargin"><textarea class="resultTextArea"></textarea></dt>
+            <dt class="leftMargin"><p class="">Enter desired file name, including extension: </p></dt>
+            <dt class="leftMargin botPad"><input class="fileNameInput" id="inputFileNameToSaveAs" value=""></input></dt>
+            <dt class="leftMargin"><button class="saveToFileBtn" onclick="saveToTextFile()">Save Text to File</button></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
     <script src="scripts.js"></script> 
   </body>
 </html>

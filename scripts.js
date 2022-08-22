@@ -74,7 +74,7 @@ document.getElementById('file').onchange = function(){
       }
       //console.log(createNewString(workArray));
       //alert(createNewString(workArray));
-      document.querySelector(`.resultTestArea`).value = createNewString(workArray);
+      document.querySelector(`.resultTextArea`).value = createNewString(workArray);
       // alert(str);
     }
 
@@ -91,7 +91,7 @@ document.getElementById('file').onchange = function(){
   }
 
   function saveToTextFile(){
-    let textToSave = document.querySelector(`.resultTestArea`).value;
+    let textToSave = document.querySelector(`.resultTextArea`).value;
     let textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
     let textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
     let fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
